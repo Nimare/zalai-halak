@@ -1,0 +1,314 @@
+{
+  "datasetVersion": 1,
+  "language": "hu",
+  "region": "Zala vármegye, Magyarország",
+  "occurrenceSources": {
+    "kis-balaton-2008": {
+      "title": "Néhány víztest halállományának felmérése a Kis-Balaton térségében",
+      "authors": "Antal László, Csipkés Roland, Müller Zoltán",
+      "published": 2009,
+      "url": "https://epa.oszk.hu/02200/02293/00003/pdf/EPA02293_Pisces_Hungarici_2009_03_12_Antal_et.al.pdf",
+      "evidence": "A 2. táblázat 2008-ban, zalai mintavételi helyeken ténylegesen azonosított fajai."
+    },
+    "mura-natura-2021": {
+      "title": "HUBF20043 Mura mente Natura 2000 fenntartási terv",
+      "published": 2021,
+      "url": "https://termeszetvedelem.hu/wp-content/uploads/2021/12/HUBF20043_Mura_mente.pdf",
+      "evidence": "A Mura zalai szakaszára dokumentált széles durbincs és selymes durbincs."
+    }
+  },
+  "fishes": [
+    {
+      "id": "karikakeszeg",
+      "nameHu": "karikakeszeg",
+      "scientificName": "Blicca bjoerkna",
+      "image": "/fish/karikakeszeg.jpg",
+      "occurrenceSource": "kis-balaton-2008",
+      "imageSource": "https://commons.wikimedia.org/wiki/File:Blicca_bjoerkna_underwater.jpg",
+      "author": "Lorenz Seebauer",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "id": "deverkeszeg",
+      "nameHu": "dévérkeszeg",
+      "scientificName": "Abramis brama",
+      "image": "/fish/deverkeszeg.jpg",
+      "occurrenceSource": "kis-balaton-2008",
+      "imageSource": "https://commons.wikimedia.org/wiki/File:Carp_bream1.jpg",
+      "author": "Микова Наталия",
+      "license": "Public domain",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+    },
+    {
+      "id": "kusz",
+      "nameHu": "küsz",
+      "alsoKnownAsHu": ["szélhajtó küsz"],
+      "scientificName": "Alburnus alburnus",
+      "image": "/fish/kusz.jpg",
+      "occurrenceSource": "kis-balaton-2008",
+      "imageSource": "https://commons.wikimedia.org/wiki/File:AlburnusAlburnus1.JPG",
+      "author": "Piet Spaans",
+      "license": "CC BY-SA 2.5",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5"
+    },
+    {
+      "id": "fekete-torpeharcsa",
+      "nameHu": "fekete törpeharcsa",
+      "scientificName": "Ameiurus melas",
+      "image": "/fish/fekete-torpeharcsa.jpg",
+      "occurrenceSource": "kis-balaton-2008",
+      "imageSource": "https://commons.wikimedia.org/wiki/File:Ameiurus_melas_2021_G1.jpg",
+      "author": "George Chernilevsky",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "id": "balin",
+      "nameHu": "balin",
+      "scientificName": "Aspius aspius",
+      "image": "/fish/balin.jpg",
+      "occurrenceSource": "kis-balaton-2008",
+      "imageSource": "https://commons.wikimedia.org/wiki/File:Aspius_aspius.jpg",
+      "author": "Jenny Glans",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+    },
+    {
+      "id": "ezustkarasz",
+      "nameHu": "ezüstkárász",
+      "scientificName": "Carassius gibelio",
+      "image": "/fish/ezustkarasz.jpg",
+      "occurrenceSource": "kis-balaton-2008",
+      "imageSource": "https://commons.wikimedia.org/wiki/File:Carassius_gibelio_2008_G1.jpg",
+      "author": "George Chernilevsky",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    {
+      "id": "nyurgaponty",
+      "nameHu": "nyurgaponty",
+      "alsoKnownAsHu": ["vadponty", "folyami ponty"],
+      "scientificName": "Cyprinus carpio morpha hungaricus",
+      "image": "/fish/nyurgaponty.jpg",
+      "occurrenceSource": "kis-balaton-2008",
+      "imageSource": "https://commons.wikimedia.org/wiki/File:Cyprinus_carpio_2008_G1_(cropped).jpg",
+      "author": "George Chernilevsky",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    {
+      "id": "csuka",
+      "nameHu": "csuka",
+      "scientificName": "Esox lucius",
+      "image": "/fish/csuka.jpg",
+      "occurrenceSource": "kis-balaton-2008",
+      "imageSource": "https://commons.wikimedia.org/wiki/File:Esox_lucius_ZOO_1.jpg",
+      "author": "Jik jik",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    {
+      "id": "vagodurbincs",
+      "nameHu": "vágódurbincs",
+      "alsoKnownAsHu": ["vágó durbincs"],
+      "scientificName": "Gymnocephalus cernua",
+      "image": "/fish/vagodurbincs.jpg",
+      "occurrenceSource": "kis-balaton-2008",
+      "imageSource": "https://commons.wikimedia.org/wiki/File:Gymnocephalus_cernuus_P%C3%A4rnu_River_Estonia_2010-01-06.jpg",
+      "author": "Tiit Hunt",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    {
+      "id": "szeles-durbincs",
+      "nameHu": "széles durbincs",
+      "scientificName": "Gymnocephalus baloni",
+      "image": "/fish/szeles-durbincs.jpg",
+      "occurrenceSource": "mura-natura-2021",
+      "imageSource": "https://commons.wikimedia.org/wiki/File:Gymnocephalus_baloni_Sz%C3%A9les_durbincs.jpg",
+      "author": "Zsoldos Márton",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    {
+      "id": "selymes-durbincs",
+      "nameHu": "selymes durbincs",
+      "scientificName": "Gymnocephalus schraetser",
+      "image": "/fish/selymes-durbincs.png",
+      "occurrenceSource": "mura-natura-2021",
+      "imageSource": "https://commons.wikimedia.org/wiki/File:Schraetzer.png",
+      "author": "Harka Ákos",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+    },
+    {
+      "id": "naphal",
+      "nameHu": "naphal",
+      "scientificName": "Lepomis gibbosus",
+      "image": "/fish/naphal.jpg",
+      "occurrenceSource": "kis-balaton-2008",
+      "imageSource": "https://commons.wikimedia.org/wiki/File:Lepomis_adult.jpg",
+      "author": "Lorenz Seebauer",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "id": "domolyko",
+      "nameHu": "domolykó",
+      "scientificName": "Squalius cephalus",
+      "image": "/fish/domolyko.jpg",
+      "occurrenceSource": "kis-balaton-2008",
+      "imageSource": "https://commons.wikimedia.org/wiki/File:Squalius_cephalus_Prague_Vltava_2.jpg",
+      "author": "Karelj",
+      "license": "Public domain",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+    },
+    {
+      "id": "reticsik",
+      "nameHu": "réticsík",
+      "scientificName": "Misgurnus fossilis",
+      "image": "/fish/reticsik.jpg",
+      "occurrenceSource": "kis-balaton-2008",
+      "imageSource": "https://commons.wikimedia.org/wiki/File:Misgurnus_fossilis_Hungary.jpg",
+      "author": "Harka Ákos",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+    },
+    {
+      "id": "folyami-geb",
+      "nameHu": "folyami géb",
+      "scientificName": "Neogobius fluviatilis",
+      "image": "/fish/folyami-geb.jpg",
+      "occurrenceSource": "kis-balaton-2008",
+      "imageSource": "https://commons.wikimedia.org/wiki/File:NeogobiusFluviatilis.JPG",
+      "author": "viridiflavus",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    {
+      "id": "csaposuger",
+      "nameHu": "csapósügér",
+      "alsoKnownAsHu": ["sügér"],
+      "scientificName": "Perca fluviatilis",
+      "image": "/fish/csaposuger.jpg",
+      "occurrenceSource": "kis-balaton-2008",
+      "imageSource": "https://commons.wikimedia.org/wiki/File:Perca_fluviatilis_-_Perche_commune_-_European_perch_(cropped).jpg",
+      "author": "Gilles San Martin",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    },
+    {
+      "id": "amurgeb",
+      "nameHu": "amurgéb",
+      "scientificName": "Perccottus glenii",
+      "image": "/fish/amurgeb.jpg",
+      "occurrenceSource": "kis-balaton-2008",
+      "imageSource": "https://commons.wikimedia.org/wiki/File:%D0%A0%D0%BE%D1%82%D0%B0%D0%BD_%D0%B2_%D0%B0%D0%BA%D0%B2%D0%B0%D1%80%D0%B8%D1%83%D0%BC%D0%B5_%D1%84%D0%BE%D1%82%D0%BE2.JPG",
+      "author": "Andshel",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    {
+      "id": "razbora",
+      "nameHu": "razbóra",
+      "alsoKnownAsHu": ["kínai razbóra"],
+      "scientificName": "Pseudorasbora parva",
+      "image": "/fish/razbora.jpg",
+      "occurrenceSource": "kis-balaton-2008",
+      "imageSource": "https://commons.wikimedia.org/wiki/File:Pseudorasbora_parva(edited_version).jpg",
+      "author": "Seotaro; szerkesztette Estrilda és Laitche",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    {
+      "id": "szivarvanyos-okle",
+      "nameHu": "szivárványos ökle",
+      "scientificName": "Rhodeus amarus",
+      "image": "/fish/szivarvanyos-okle.jpg",
+      "occurrenceSource": "kis-balaton-2008",
+      "imageSource": "https://commons.wikimedia.org/wiki/File:Rhodeus_amarus_2008_G1.jpg",
+      "author": "George Chernilevsky",
+      "license": "Public domain",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+    },
+    {
+      "id": "bodorka",
+      "nameHu": "bodorka",
+      "scientificName": "Rutilus rutilus",
+      "image": "/fish/bodorka.jpg",
+      "occurrenceSource": "kis-balaton-2008",
+      "imageSource": "https://commons.wikimedia.org/wiki/File:Rutilus_rutilus_by_Algirdas_cropped.jpg",
+      "author": "Algirdas; szerkesztette George Chernilevsky",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+    },
+    {
+      "id": "sullo",
+      "nameHu": "süllő",
+      "scientificName": "Sander lucioperca",
+      "image": "/fish/sullo.jpg",
+      "occurrenceSource": "kis-balaton-2008",
+      "imageSource": "https://commons.wikimedia.org/wiki/File:Sander_lucioperca_1.jpg",
+      "author": "eLNuko",
+      "license": "Public domain",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+    },
+    {
+      "id": "kosullo",
+      "nameHu": "kősüllő",
+      "scientificName": "Sander volgensis",
+      "image": "/fish/kosullo.jpg",
+      "occurrenceSource": "kis-balaton-2008",
+      "imageSource": "https://commons.wikimedia.org/wiki/File:Bersh_01.jpg",
+      "author": "Администрация Волгоградской области",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    {
+      "id": "vorosszarnyu-keszeg",
+      "nameHu": "vörösszárnyú keszeg",
+      "scientificName": "Scardinius erythrophthalmus",
+      "image": "/fish/vorosszarnyu-keszeg.jpg",
+      "occurrenceSource": "kis-balaton-2008",
+      "imageSource": "https://commons.wikimedia.org/wiki/File:Scardinius_erythropthalmus_2009_G1.jpg",
+      "author": "George Chernilevsky",
+      "license": "Public domain",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+    },
+    {
+      "id": "harcsa",
+      "nameHu": "harcsa",
+      "alsoKnownAsHu": ["európai harcsa"],
+      "scientificName": "Silurus glanis",
+      "image": "/fish/harcsa.jpg",
+      "occurrenceSource": "kis-balaton-2008",
+      "imageSource": "https://commons.wikimedia.org/wiki/File:Silurus_glanis_02.jpg",
+      "author": "Dieter Florian",
+      "license": "CC BY-SA 3.0 DE",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
+    },
+    {
+      "id": "compo",
+      "nameHu": "compó",
+      "scientificName": "Tinca tinca",
+      "image": "/fish/compo.jpg",
+      "occurrenceSource": "kis-balaton-2008",
+      "imageSource": "https://commons.wikimedia.org/wiki/File:Tinca_tinca_Natural_History_Museum_University_of_Pisa.jpg",
+      "author": "Mattia Nocciola",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "id": "lapi-poc",
+      "nameHu": "lápi póc",
+      "scientificName": "Umbra krameri",
+      "image": "/fish/lapi-poc.jpg",
+      "occurrenceSource": "kis-balaton-2008",
+      "imageSource": "https://commons.wikimedia.org/wiki/File:European_Mudminnow_(Umbra_krameri)_02.jpg",
+      "author": "Vad víz",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  ]
+}
