@@ -113,7 +113,7 @@ export default function FishGame() {
         <h2 id="mode-title">Mennyire ismered<br/>Zala halait?</h2>
         <button className="mode-card" type="button" onClick={() => startGame('beginner')}>
           <span className="mode-icon"><ListChecks aria-hidden="true"/></span>
-          <span><strong>Kezdő</strong><small>{beginnerCount} hal a {fishPool(fishes, 'beginner').length} kezdő közül · 4 válaszlehetőség</small></span>
+          <span><strong>Kezdő</strong><small>{beginnerCount} hal a {fishPool(fishes, 'beginner').length} kezdő közül · 4 válaszlehetőség, köztük hasonló szakértő halak neve is</small></span>
           <span className="mode-record">Rekord: {best.beginner}/{beginnerCount}</span>
         </button>
         <button className="mode-card" type="button" onClick={() => startGame('expert')}>
