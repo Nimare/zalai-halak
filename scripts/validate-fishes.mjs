@@ -43,7 +43,10 @@ for (let run = 0; run < 25; run++) {
     assert.ok(options.includes(fish.nameHu));
     assert.ok(options.every(name => fishes.find(f => f.nameHu === name).category === 'kezdő'));
   }
-  assert.deepEqual(new Set(buildRounds(fishes, 'expert').map(f => f.id)), new Set(fishes.map(f => f.id)));
+  const expert = buildRounds(fishes, 'expert');
+  assert.equal(expert.length, 20);
+  assert.equal(new Set(expert.map(f => f.id)).size, 20);
+  assert.ok(expert.every(f => fishPool(fishes, 'expert').some(entry => entry.id === f.id)));
 }
 for (const fish of fishes) {
   for (const answer of [fish.nameHu, ...(fish.alsoKnownAsHu ?? [])]) assert.ok(acceptsAnswer(answer, fish, fishes));

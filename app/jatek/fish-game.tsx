@@ -10,9 +10,9 @@ type Phase = 'intro' | 'playing' | 'result';
 type FishEntry = (typeof fishData.fishes)[number];
 const fishes = fishData.fishes;
 const beginnerCount = Math.min(20, fishPool(fishes, 'beginner').length);
-const expertCount = fishPool(fishes, 'expert').length;
+const expertCount = Math.min(20, fishPool(fishes, 'expert').length);
 const ROUND_TIME = 30;
-const recordKey = (mode: Mode) => `zalai-halak-best-v${fishData.datasetVersion}-${mode}`;
+const recordKey = (mode: Mode) => `zalai-halak-best-v${fishData.datasetVersion}-${mode}${mode === 'expert' ? '-20-rounds' : ''}`;
 
 export default function FishGame() {
   const [phase, setPhase] = useState<Phase>('intro');
@@ -118,7 +118,7 @@ export default function FishGame() {
         </button>
         <button className="mode-card" type="button" onClick={() => startGame('expert')}>
           <span className="mode-icon"><Keyboard aria-hidden="true"/></span>
-          <span><strong>Szakértő</strong><small>Mind az {expertCount} hal · kezdő és szakértő · beírt válasz</small></span>
+          <span><strong>Szakértő</strong><small>{expertCount} hal az {fishPool(fishes, 'expert').length} kezdő és szakértő közül · beírt válasz</small></span>
           <span className="mode-record">Rekord: {best.expert}/{expertCount}</span>
         </button>
       </div>
@@ -185,7 +185,6 @@ export default function FishGame() {
             <div><dt>Maximális méret</dt><dd>{currentFish.maxSize}</dd></div>
           </dl>
           {'notes' in currentFish && <p className="fish-note">{currentFish.notes}</p>}
-          <a className="credits-link" href={`/forrasok#${currentFish.id}`}>Adatok és kép forrása</a>
           <button type="button" className="primary-button next-button" onClick={nextRound}>{roundIndex === rounds.length - 1 ? 'Eredmény megtekintése' : 'Következő hal'} <span aria-hidden="true">→</span></button>
         </div>}
       </div>

@@ -13,9 +13,10 @@ A korábbi 26 bejegyzésből 25 megfelel a táblázat egy-egy sorának. A névv�
 ## Játékmódok és adatlap
 
 - Kezdő: 20 különböző hal a táblázat 36 kezdő tételéből; mind a négy válaszlehetőség ebből a kategóriából származik.
-- Szakértő: a táblázat 58 tétele és a nyurgaponty, összesen 59 különböző bejegyzés.
+- Szakértő: 20 különböző, véletlenszerűen kiválasztott hal az 59 tételes teljes listából (a táblázat 58 tétele és a nyurgaponty).
 - Az adatlap tartalmazza a sorszámot, magyar és tudományos nevet, eredetet, védelmet/státuszt, zalai előfordulást, helyi élőhelyet, maximális méretet és a felismerési leírást. A kategóriát nem mutatja.
 - A bővített lista eredményei külön rekordkulcsot használnak; a régi rekordok tárolt adatait nem töröljük.
+- A 20 kérdéses szakértő mód rekordja külön tárolódik a korábbi, 59 kérdéses eredményektől. A játék válasz utáni adatlapjairól és az eredményoldalról nincs forráslink; a forrásoldal a főoldal láblécéből érhető el.
 
 Jóváhagyott jelmagyarázat: ●●● gyakori; ●● közepesen gyakori; ● ritka; ◐ történeti vagy bizonytalan előfordulás. A táblázati adatok szerkesztői besorolások; nem helyettesítettük őket más forrás eltérő adataival.
 

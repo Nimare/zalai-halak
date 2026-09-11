@@ -21,7 +21,7 @@ export function fishPool<T extends GameFish>(fishes: readonly T[], mode: Mode): 
 
 export function buildRounds<T extends GameFish>(fishes: readonly T[], mode: Mode): T[] {
   const pool = fishPool(fishes, mode);
-  return shuffle(pool).slice(0, mode === 'beginner' ? 20 : pool.length);
+  return shuffle(pool).slice(0, 20);
 }
 
 export function buildOptions<T extends GameFish>(fish: T, fishes: readonly T[], mode: Mode): string[] {
