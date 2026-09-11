@@ -5,67 +5,14 @@ import { Check, Clock3, Keyboard, ListChecks, RotateCcw, Trophy, X } from 'lucid
 import fishData from '@/data/fishes.json';
 import { fishFacts } from '@/data/fish-facts';
 
-type Mode = 'beginner' | 'expert';
+import { acceptsAnswer, buildOptions, buildRounds, fishPool, type Mode } from '@/lib/game-rules';
 type Phase = 'intro' | 'playing' | 'result';
-type FishEntry = {
-  id: string;
-  nameHu: string;
-  scientificName: string;
-  image: string;
-  alsoKnownAsHu?: string[];
-};
-
-const fishes = fishData.fishes as FishEntry[];
+type FishEntry = (typeof fishData.fishes)[number];
+const fishes = fishData.fishes;
+const beginnerCount = Math.min(20, fishPool(fishes, 'beginner').length);
+const expertCount = fishPool(fishes, 'expert').length;
 const ROUND_TIME = 30;
-
-function shuffle<T>(items: T[]) {
-  const result = [...items];
-  for (let index = result.length - 1; index > 0; index -= 1) {
-    const randomIndex = Math.floor(Math.random() * (index + 1));
-    [result[index], result[randomIndex]] = [result[randomIndex], result[index]];
-  }
-  return result;
-}
-
-function normalizeAnswer(value: string) {
-  return value
-    .trim()
-    .toLocaleLowerCase('hu-HU')
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-z0-9]+/g, ' ')
-    .trim();
-}
-
-function editDistance(left: string, right: string) {
-  const previous = Array.from({ length: right.length + 1 }, (_, index) => index);
-  for (let leftIndex = 1; leftIndex <= left.length; leftIndex += 1) {
-    let diagonal = previous[0];
-    previous[0] = leftIndex;
-    for (let rightIndex = 1; rightIndex <= right.length; rightIndex += 1) {
-      const above = previous[rightIndex];
-      const cost = left[leftIndex - 1] === right[rightIndex - 1] ? 0 : 1;
-      previous[rightIndex] = Math.min(previous[rightIndex] + 1, previous[rightIndex - 1] + 1, diagonal + cost);
-      diagonal = above;
-    }
-  }
-  return previous[right.length];
-}
-
-function acceptsAnswer(answer: string, fish: FishEntry) {
-  const candidate = normalizeAnswer(answer);
-  if (!candidate) return false;
-  return [fish.nameHu, ...(fish.alsoKnownAsHu ?? [])].some((accepted) => {
-    const normalized = normalizeAnswer(accepted);
-    const tolerance = normalized.length >= 12 ? 2 : 1;
-    return candidate === normalized || editDistance(candidate, normalized) <= tolerance;
-  });
-}
-
-function buildOptions(fish: FishEntry) {
-  const distractors = shuffle(fishes.filter((entry) => entry.id !== fish.id)).slice(0, 3);
-  return shuffle([fish, ...distractors]).map((entry) => entry.nameHu);
-}
+const recordKey = (mode: Mode) => `zalai-halak-best-v${fishData.datasetVersion}-${mode}`;
 
 export default function FishGame() {
   const [phase, setPhase] = useState<Phase>('intro');
@@ -82,12 +29,12 @@ export default function FishGame() {
   const [best, setBest] = useState<Record<Mode, number>>({ beginner: 0, expert: 0 });
   const answerInput = useRef<HTMLInputElement>(null);
   const currentFish = rounds[roundIndex];
-  const options = useMemo(() => currentFish ? buildOptions(currentFish) : [], [currentFish]);
+  const options = useMemo(() => currentFish ? buildOptions(currentFish, fishes, mode) : [], [currentFish, mode]);
 
   useEffect(() => {
     setBest({
-      beginner: Number(localStorage.getItem('zalai-halak-best-beginner') ?? 0),
-      expert: Number(localStorage.getItem('zalai-halak-best-expert') ?? 0),
+      beginner: Number(localStorage.getItem(recordKey('beginner')) ?? 0),
+      expert: Number(localStorage.getItem(recordKey('expert')) ?? 0),
     });
   }, []);
 
@@ -108,9 +55,8 @@ export default function FishGame() {
   }, [answered, mode, phase, roundIndex]);
 
   function startGame(nextMode: Mode) {
-    const total = nextMode === 'beginner' ? 20 : fishes.length;
     setMode(nextMode);
-    setRounds(shuffle(fishes).slice(0, total));
+    setRounds(buildRounds(fishes, nextMode));
     setRoundIndex(0);
     setSeconds(ROUND_TIME);
     setScore(0);
@@ -124,7 +70,7 @@ export default function FishGame() {
 
   function submitAnswer(value: string) {
     if (!currentFish || answered) return;
-    const isCorrect = mode === 'beginner' ? value === currentFish.nameHu : acceptsAnswer(value, currentFish);
+    const isCorrect = mode === 'beginner' ? value === currentFish.nameHu : acceptsAnswer(value, currentFish, fishes);
     setSelected(value);
     setCorrect(isCorrect);
     setTimedOut(false);
@@ -134,7 +80,7 @@ export default function FishGame() {
 
   function nextRound() {
     if (roundIndex === rounds.length - 1) {
-      const key = `zalai-halak-best-${mode}`;
+      const key = recordKey(mode);
       const nextBest = Math.max(score, best[mode]);
       localStorage.setItem(key, String(nextBest));
       setBest((current) => ({ ...current, [mode]: nextBest }));
@@ -167,13 +113,13 @@ export default function FishGame() {
         <h2 id="mode-title">Mennyire ismered<br/>Zala halait?</h2>
         <button className="mode-card" type="button" onClick={() => startGame('beginner')}>
           <span className="mode-icon"><ListChecks aria-hidden="true"/></span>
-          <span><strong>Kezdő</strong><small>20 hal · 4 válaszlehetőség</small></span>
-          <span className="mode-record">Rekord: {best.beginner}/20</span>
+          <span><strong>Kezdő</strong><small>{beginnerCount} hal a {fishPool(fishes, 'beginner').length} kezdő közül · 4 válaszlehetőség</small></span>
+          <span className="mode-record">Rekord: {best.beginner}/{beginnerCount}</span>
         </button>
         <button className="mode-card" type="button" onClick={() => startGame('expert')}>
           <span className="mode-icon"><Keyboard aria-hidden="true"/></span>
-          <span><strong>Szakértő</strong><small>Mind a {fishes.length} hal · beírt válasz</small></span>
-          <span className="mode-record">Rekord: {best.expert}/{fishes.length}</span>
+          <span><strong>Szakértő</strong><small>Mind az {expertCount} hal · kezdő és szakértő · beírt válasz</small></span>
+          <span className="mode-record">Rekord: {best.expert}/{expertCount}</span>
         </button>
       </div>
     </section>;
@@ -186,7 +132,7 @@ export default function FishGame() {
       <span className="result-icon"><Trophy aria-hidden="true"/></span>
       <p className="mode-kicker">A JÁTÉK VÉGET ÉRT</p>
       <h1 id="result-title">{score} / {total}</h1>
-      <p className="result-lead">{percent === 100 ? 'Hibátlan! Zala minden halát felismered.' : percent >= 70 ? 'Szép fogás! Már igazán jól ismered a zalai vizeket.' : 'Jó kezdet — minden körrel több jellegzetesség marad meg.'}</p>
+      <p className="result-lead">{percent === 100 ? 'Hibátlan! Ebben a körben minden halat felismertél.' : percent >= 70 ? 'Szép fogás! Már igazán jól ismered a zalai vizeket.' : 'Jó kezdet — minden körrel több jellegzetesség marad meg.'}</p>
       <p className="result-best">Saját rekordod ebben a módban: <strong>{best[mode]} / {total}</strong></p>
       <div className="result-actions">
         <button type="button" className="primary-button" onClick={() => startGame(mode)}><RotateCcw size={18} aria-hidden="true"/> Újra ebben a módban</button>
@@ -231,9 +177,15 @@ export default function FishGame() {
           {!correct && selected && <p className="given-answer">A válaszod: {selected}</p>}
           <dl className="fish-facts">
             <div><dt>Erről ismerheted fel</dt><dd>{fact.identification}</dd></div>
-            <div><dt>Élőhelye</dt><dd>{fact.habitat}</dd></div>
-            <div><dt>Zalai előfordulás</dt><dd>{fact.occurrence}</dd></div>
+            <div><dt>Fajlista sorszáma</dt><dd>{currentFish.number}</dd></div>
+            <div><dt>Eredet</dt><dd>{fishData.originLegend[currentFish.origin as keyof typeof fishData.originLegend]}</dd></div>
+            <div><dt>Védelem / státusz</dt><dd>{currentFish.protection === '–' ? '– (nincs külön jelölés a fajlistában)' : currentFish.protection}</dd></div>
+            <div><dt>Zalai előfordulás</dt><dd>{currentFish.occurrence} {fishData.occurrenceLegend[currentFish.occurrence as keyof typeof fishData.occurrenceLegend]}</dd></div>
+            <div><dt>Fő élőhely Zalában</dt><dd>{currentFish.localHabitat}</dd></div>
+            <div><dt>Maximális méret</dt><dd>{currentFish.maxSize}</dd></div>
           </dl>
+          {'notes' in currentFish && <p className="fish-note">{currentFish.notes}</p>}
+          <a className="credits-link" href={`/forrasok#${currentFish.id}`}>Adatok és kép forrása</a>
           <button type="button" className="primary-button next-button" onClick={nextRound}>{roundIndex === rounds.length - 1 ? 'Eredmény megtekintése' : 'Következő hal'} <span aria-hidden="true">→</span></button>
         </div>}
       </div>

@@ -1,0 +1,59 @@
+number	nameHu	scientificName	origin	protection	occurrence	localHabitat	maxSize	category
+1	Vladykov-ingola	Eudontomyzon vladykovi	Ő	védett	●	Mura, Cupi-patak	~20 cm	szakértő
+2	Simatok	Acipenser nudiventris	Ő	fokozottan védett	◐	Mura	~200 cm	szakértő
+3	Kecsege	Acipenser ruthenus	Ő	–	●	Mura	~125 cm	kezdő
+4	Angolna	Anguilla anguilla	Ő/telepített	–	●	Balaton–Zala, Mura	~150 cm	kezdő
+5	Csuka	Esox lucius	Ő	–	●●●	Kis-Balaton, Zala, holtágak, tavak	~150 cm	kezdő
+6	Bodorka	Rutilus rutilus	Ő	–	●●●	szinte minden nagyobb víz	~50 cm	kezdő
+7	Leánykoncér	Rutilus virgo	Ő	védett	●	Mura, Lendva	~50 cm	szakértő
+8	Vörösszárnyú keszeg	Scardinius erythrophthalmus	Ő	–	●●●	Kis-Balaton, holtágak, tavak	~50 cm	kezdő
+9	Domolykó	Squalius cephalus	Ő	–	●●●	Mura, Kerka, Zala, patakok	~80 cm	kezdő
+10	Nyúldomolykó	Leuciscus leuciscus	Ő	–	●●	Mura és folyóvizek	~40 cm	szakértő
+11	Jászkeszeg	Leuciscus idus	Ő	–	●●	Mura, Zala	~80 cm	kezdő
+12	Balin	Leuciscus aspius	Ő	–	●●	Mura, Zala, Kis-Balaton	~120 cm	kezdő
+13	Küsz	Alburnus alburnus	Ő	–	●●●	szinte minden nagyobb víz	~25 cm	kezdő
+14	Sujtásos küsz	Alburnoides bipunctatus	Ő	védett	●●	Mura, Kerka, patakok	~15 cm	szakértő
+15	Kurta baing	Leucaspius delineatus	Ő	védett	●	lápok, csatornák, kisvizek	~12 cm	szakértő
+16	Fürge cselle	Phoxinus phoxinus	Ő	védett	●●	Kerka-rendszer, patakok	~14 cm	kezdő
+17	Dévérkeszeg	Abramis brama	Ő	–	●●●	Kis-Balaton, Zala, Mura, tavak	~80 cm	kezdő
+18	Karikakeszeg	Blicca bjoerkna	Ő	–	●●●	Kis-Balaton, Zala, Mura	~40 cm	kezdő
+19	Laposkeszeg	Ballerus ballerus	Ő	–	●	Mura/Balaton vízrendszere	~50 cm	szakértő
+20	Bagolykeszeg	Ballerus sapa	Ő	–	●	Mura	~50 cm	szakértő
+21	Garda	Pelecus cultratus	Ő	–	●●	Balaton, Zala–Kis-Balaton	~60 cm	kezdő
+22	Szilvaorrú keszeg	Vimba vimba	Ő	–	●●	Mura	~50 cm	szakértő
+23	Paduc	Chondrostoma nasus	Ő	–	●●	Mura, Kerka	~50 cm	kezdő
+24	Márna	Barbus barbus	Ő	–	●●	Mura, Kerka, Zala	~100 cm	kezdő
+25	Ponty	Cyprinus carpio	Ő/telepített	–	●●●	gyakorlatilag minden nagyobb víz	~120 cm	kezdő
+26	Széles kárász	Carassius carassius	Ő	–	●●	lápok, holtágak, Kis-Balaton	~50 cm	kezdő
+27	Ezüstkárász	Carassius gibelio	I	inváziós	●●●	szinte minden lassú/állóvíz	~50 cm	kezdő
+28	Compó	Tinca tinca	Ő	–	●●	Kis-Balaton, holtágak, tavak	~70 cm	kezdő
+29	Szivárványos ökle	Rhodeus amarus	Ő	védett	●●	Zala, Mura-rendszer, csatornák	~10 cm	kezdő
+30	Fenékjáró küllő	Gobio gobio	Ő	védett	●●	patakok, folyók	~20 cm	kezdő
+31	Halványfoltú küllő	Romanogobio vladykovi	Ő	védett	●●	Mura-rendszer	~15 cm	szakértő
+32	Homoki küllő	Romanogobio kesslerii	Ő	védett	●	Mura	~15 cm	szakértő
+33	Felpillantó küllő	Romanogobio uranoscopus	Ő	védett	●	Mura	~15 cm	szakértő
+34	Kínai razbóra	Pseudorasbora parva	I	inváziós	●●●	Kis-Balaton, csatornák, tavak	~12 cm	kezdő
+35	Amur	Ctenopharyngodon idella	I	telepített	●●	tavak, Mura	~150 cm	kezdő
+36	Fehér busa	Hypophthalmichthys molitrix	I	telepített	●	tavak, Balaton-rendszer	~120 cm	kezdő
+37	Pettyes busa	Hypophthalmichthys nobilis	I	telepített	●	nagyobb tavak	~150 cm	kezdő
+38	Busa-hibrid	H. molitrix × H. nobilis	I	–	●●	nagyobb tavak/Balaton-rendszer	>100 cm	szakértő
+39	Vágócsík	Cobitis elongatoides	Ő	védett	●●	Mura, Kerka, Zala-rendszer	~15 cm	kezdő
+40	Törpecsík	Sabanejewia balcanica	Ő	védett	●	Mura-rendszer	~12 cm	szakértő
+41	Réticsík	Misgurnus fossilis	Ő	védett	●●	Kis-Balaton, lápok, csatornák	~30 cm	kezdő
+42	Kövicsík	Barbatula barbatula	Ő	védett	●●	patakok, Kerka-rendszer	~20 cm	szakértő
+43	Harcsa	Silurus glanis	Ő	–	●●	Mura, Zala, Kis-Balaton, tavak	~250+ cm	kezdő
+44	Törpeharcsa	Ameiurus nebulosus	I	inváziós	●	lassú/állóvizek	~45 cm	kezdő
+45	Fekete törpeharcsa	Ameiurus melas	I	inváziós	●●●	Kis-Balaton, tavak, holtágak	~50 cm	szakértő
+46	Menyhal	Lota lota	Ő	–	●●	Mura és folyóvizek	~100 cm	kezdő
+47	Lápi póc	Umbra krameri	Ő	fokozottan védett	●●	Kis-Balaton, Mura holtágai, csatornák	~15 cm	kezdő
+48	Naphal	Lepomis gibbosus	I	inváziós	●●●	tavak, holtágak, csatornák	~25 cm	kezdő
+49	Sügér	Perca fluviatilis	Ő	–	●●●	szinte minden nagyobb víz	~50 cm	kezdő
+50	Süllő	Sander lucioperca	Ő	–	●●	Mura, Kis-Balaton, tavak	~120 cm	kezdő
+51	Kősüllő	Sander volgensis	Ő	–	●	Balaton/Zala-rendszer	~50 cm	kezdő
+52	Vágódurbincs	Gymnocephalus cernua	Ő	–	●●	Mura, Zala/Kis-Balaton	~25 cm	kezdő
+53	Széles durbincs	Gymnocephalus baloni	Ő	védett	●	Mura	~20 cm	szakértő
+54	Selymes durbincs	Gymnocephalus schraetser	Ő	védett	●	Mura	~30 cm	szakértő
+55	Magyar bucó	Zingel zingel	Ő	fokozottan védett	●	Mura	~50 cm	szakértő
+56	Botos kölönte	Cottus gobio	Ő	védett	●●	Mura, hűvösebb vízfolyások	~18 cm	szakértő
+57	Folyami géb	Neogobius fluviatilis	I	inváziós	●●	Zala, Kis-Balaton-rendszer	~20 cm	szakértő
+58	Amurgéb	Perccottus glenii	I	inváziós	●●	Kis-Balaton, csatornák	~25 cm	szakértő

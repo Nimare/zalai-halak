@@ -1,13 +1,112 @@
 export type FishFact = {
   identification: string;
-  habitat: string;
-  occurrence: string;
+  habitat?: string;
+  occurrence?: string;
 };
 
 const kisBalaton = 'A 2008-as Kis-Balaton térségi felmérés zalai mintavételi helyein dokumentálták.';
 const mura = 'A Mura Zala vármegyei szakaszának Natura 2000 fenntartási terve dokumentálja.';
 
 export const fishFacts: Record<string, FishFact> = {
+  'vladykov-ingola': {
+    identification: 'Vékony, angolnaszerű, pikkelytelen állkapocs nélküli gerinces. Páros úszói nincsenek, szája szívótölcsér, feje mögött hét pár kopoltyúnyílás sorakozik. A rokon ingoláktól képről nehéz biztosan elkülöníteni.',
+  },
+  simatok: {
+    identification: 'Testén öt sor csontvért fut, farka aszimmetrikus. Alsó ajka középen folytonos, négy rojtos bajuszszála a szájáig ér; ez a tokfélék közötti elkülönítés fontos bélyege.',
+  },
+  kecsege: {
+    identification: 'Karcsú tokféle hosszú, hegyes orral, alul nyíló szájjal és négy rojtos bajuszszállal. Oldalán sok apró csontvért sorakozik, farokúszójának felső karéja hosszabb.',
+  },
+  angolna: {
+    identification: 'Kígyószerű teste hátul oldalról lapított. Hát-, farok- és farok alatti úszója összefüggő szegélyt alkot; mellúszója van, hasúszója nincs.',
+  },
+  leanykoncer: {
+    identification: 'Ezüstös, oldalról lapított test, kis alsó állású száj és tompa orr jellemzi. Szeme ezüstös; az ívó hím fején és pikkelyein feltűnő nászkiütések fejlődnek.',
+  },
+  nyuldomolyko: {
+    identification: 'Karcsú, ezüstös hal viszonylag kis fejjel és szűk szájjal. A domolykótól kisebb szája és a farok alatti úszó homorú széle különíti el.',
+  },
+  jaszkeszeg: {
+    identification: 'Zömökebb, ezüstös-aranyos testű hal vörhenyes alsó úszókkal. Pikkelyei a domolykóénál apróbbak, feje és szája kisebb.',
+  },
+  'sujtasos-kusz': {
+    identification: 'Ezüstös oldalán a lefelé ívelő oldalvonalat két sor sötét pont szegélyezi, mintha varrás futna rajta. Teste a küszénél magasabb, szája kevésbé felfelé nyíló.',
+  },
+  'kurta-baing': {
+    identification: 'Apró, ezüstös, erősen felső állású szájú hal. Oldalvonala csak néhány elülső pikkelyen látszik, a test hátsó részén fényes hosszanti sáv húzódik.',
+  },
+  'furge-cselle': {
+    identification: 'Kis termetű, hengeres testű hal nagyon apró pikkelyekkel. Oldalán szabálytalan sötét foltok sorakoznak; az ívó hím hasa és úszótövei élénkpirosak lehetnek.',
+  },
+  laposkeszeg: {
+    identification: 'Erősen lapított, ezüstös keszeg feltűnően hosszú farok alatti úszóval. Szája felfelé nyílik, szeme a bagolykeszegénél kisebb.',
+  },
+  bagolykeszeg: {
+    identification: 'Nagy, világos szivárványhártyájú szem, tompa orr és kis alsó állású száj jellemzi. Farok alatti úszója igen hosszú; a laposkeszeg szája ezzel szemben felfelé nyílik.',
+  },
+  garda: {
+    identification: 'Hosszú, oldalról erősen lapított, kard alakú testű hal. Háta csaknem egyenes, hasa ívelten kidomborodik; mellúszói hosszúak, szája felfelé nyílik.',
+  },
+  'szilvaorru-keszeg': {
+    identification: 'Húsos, sötét orra a kis alsó állású száj elé nyúlik. Ezüstös, lapított teste és megnyúlt farok alatti úszója keszegszerű; szája nem olyan egyenes rés, mint a paducé.',
+  },
+  paduc: {
+    identification: 'Megnyúlt, ezüstös hal előrenyúló, tompa orral. Alsó állású szája jellegzetesen harántirányú, egyenes rés; alsó ajkának kemény peremével az aljzatot kaparja.',
+  },
+  marna: {
+    identification: 'Erős, megnyúlt test, alsó állású húsos száj és négy bajuszszál jellemzi. Úszói gyakran vörhenyesek, hátúszójának erős csontsugara hátul fogazott.',
+  },
+  ponty: {
+    identification: 'Változóan magas hátú, nagy pikkelyű hal hosszú hátúszóval. Szája körül két pár bajuszszál van; ez a bajusz nélküli kárászoktól könnyen megkülönbözteti.',
+  },
+  'szeles-karasz': {
+    identification: 'Magas, oldalról lapított, többnyire aranybarna testű, bajusz nélküli hal. Hosszú hátúszójának felső széle domború, míg az ezüstkárászé inkább egyenes vagy homorú.',
+  },
+  'fenekjaro-kullo': {
+    identification: 'Kis termetű, fenéklakó hal alsó állású szájjal és egy pár bajuszszállal. Oldalán nagy sötét foltok, hát- és farokúszóján jól látható pettyek sorakoznak.',
+  },
+  'halvanyfoltu-kullo': {
+    identification: 'Karcsú küllő egy pár bajuszszállal és oldalsó foltsorral. Úszói csaknem színtelenek, a farokúszó feltűnő pettyezése hiányzik; biztos azonosításához apró bélyegek vizsgálata is kellhet.',
+  },
+  'homoki-kullo': {
+    identification: 'Nyúlánk, vékony faroknyelű küllő hosszú bajuszszálakkal. Oldalán sötét foltsor, farokúszóján több sorba rendeződő pettyezés látszik; közeli rokonaitól képről nehéz elkülöníteni.',
+  },
+  'felpillanto-kullo': {
+    identification: 'Megnyúlt testű küllő feltűnően felfelé tekintő szemekkel és hosszú bajuszszálakkal. Faroknyele vékony, farokúszóján halvány foltokból álló sáv látható.',
+  },
+  amur: {
+    identification: 'Hosszúkás, hengeres testű, nagy pikkelyű hal széles, tompa fejjel. Szája körül nincs bajusz, hátúszója a pontyénál jóval rövidebb.',
+  },
+  'feher-busa': {
+    identification: 'Ezüstös testű, nagy fejű hal a fej alsó részén ülő szemmel. Hasán a toroktól a végbélnyílásig éles él fut, testén nincsenek a pettyes busára jellemző sötét márványfoltok.',
+  },
+  'pettyes-busa': {
+    identification: 'Igen nagy fejű busa mélyen ülő szemmel és többnyire sötéten márványozott oldallal. Hasi éle csak a hasúszók mögött kezdődik; mellúszója hosszú.',
+  },
+  'busa-hibrid': {
+    identification: 'A fehér és a pettyes busa kereszteződése: alacsonyan ülő szem, nagy fej és változó foltozottság jellemzi. Bélyegei köztesek lehetnek; egy fénykép önmagában nem bizonyítja a hibrid eredetet.',
+  },
+  vagocsik: {
+    identification: 'Vékony, oldalról lapított csík három pár rövid bajuszszállal, oldalán rendezett sötét foltsorral. Farokúszója tövének felső részén sötét folt ül; rokonai és hibridjei képről nem mindig különíthetők el.',
+  },
+  torpecsik: {
+    identification: 'Apró, sárgásbarna csík, oldalán egymástól világos közökkel elválasztott nagy sötét foltokkal. Háti foltsora is határozott; faroknyelének felső részén alacsony bőrél húzódik.',
+  },
+  kovicsik: {
+    identification: 'Hengeres, barnán márványozott testű csík hat bajuszszállal. Szabálytalan foltozása nem alkot olyan rendezett oldalsort, mint a vágócsíké; farka csak enyhén bemetszett.',
+  },
+  torpeharcsa: {
+    identification: 'Pikkelytelen, barnán márványozott test, nyolc bajuszszál és zsírúszó jellemzi. Mellúszótüskéjének belső szélén erős fogak vannak; a fekete törpeharcsától e bélyeg segít elkülöníteni.',
+  },
+  menyhal: {
+    identification: 'Nyúlánk, barnán márványozott hal egyetlen állbajusszal. Két hátúszója közül a második nagyon hosszú, hasúszói messze elöl helyezkednek el.',
+  },
+  'magyar-buco': {
+    identification: 'Megnyúlt, fenéklakó hal két különálló hátúszóval és sötét, ferde harántsávokkal. Feje lapos, faroknyele a német bucóénál rövidebb és vaskosabb.',
+  },
+  'botos-kolonte': {
+    identification: 'Széles, lapított fejű, barnán foltozott fenéklakó hal nagy, legyezőszerű mellúszókkal és két hátúszóval. Hasúszói különállók, nem alkotnak a gébekére jellemző tapadókorongot.',
+  },
   karikakeszeg: {
     identification: 'Magas, oldalról lapított, ezüstös testű keszeg. Páros úszói gyakran vörhenyesek, szeme a dévérkeszegénél feltűnően nagyobb.',
     habitat: 'Álló- és lassan áramló, növényzetben gazdag vizek rajokban élő hala.',
