@@ -38,3 +38,7 @@ next-env.d.ts
 /outputs/
 /work/
 /.pnpm-store/
+
+# browser test artifacts
+/test-results/
+/playwright-report/

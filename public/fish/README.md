@@ -8,4 +8,4 @@ A 24 Kis-Balaton–Zala tétel az Antal–Csipkés–Müller (2009) tanulmány 2
 
 A képek a Wikimedia Commons gyűjteményéből származnak, kivéve a Vladykov-ingola SNSB-ZSM múzeumi példányát, amelynek adatai és képlicence a GBIF rekordjában szerepelnek. A busahibrid képe tanulmányban azonosított hibridet ábrázol. A nyurgaponty képe a nyúlánk vadponty testformáját szemlélteti, nem zalai felvétel. A fajképek általában nem a zalai előfordulás bizonyítékai.
 
-A `scripts/download-fish-images.ps1` kizárólag a hiányzó fájlokat tölti le az ellenőrzött képforrásokból. Nem cseréli a kiválasztott képet egy későbbi Wikipédia-vezetőképre, és nem írja át a szerző- vagy licencadatokat. A képeket változtatás nélkül tároljuk; a Commons bélyegképei az eredetinek méretezett változatai.
+A `scripts/download-fish-images.mjs` kizárólag a hiányzó fájlokat tölti le az ellenőrzött képforrásokból. Nem cseréli a kiválasztott képet egy későbbi Wikipédia-vezetőképre, és nem írja át a szerző- vagy licencadatokat. A képeket változtatás nélkül tároljuk; a Commons bélyegképei az eredetinek méretezett változatai.

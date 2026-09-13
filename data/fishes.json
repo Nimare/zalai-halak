@@ -269,9 +269,7 @@
     {
       "id": "kusz",
       "nameHu": "Küsz",
-      "alsoKnownAsHu": [
-        "szélhajtó küsz"
-      ],
+      "alsoKnownAsHu": ["szélhajtó küsz"],
       "scientificName": "Alburnus alburnus",
       "image": "/fish/kusz.jpg",
       "occurrenceSource": "kis-balaton-2008",
@@ -707,9 +705,7 @@
     {
       "id": "razbora",
       "nameHu": "Kínai razbóra",
-      "alsoKnownAsHu": [
-        "razbóra"
-      ],
+      "alsoKnownAsHu": ["razbóra"],
       "scientificName": "Pseudorasbora parva",
       "image": "/fish/razbora.jpg",
       "occurrenceSource": "kis-balaton-2008",
@@ -898,9 +894,7 @@
     {
       "id": "harcsa",
       "nameHu": "Harcsa",
-      "alsoKnownAsHu": [
-        "európai harcsa"
-      ],
+      "alsoKnownAsHu": ["európai harcsa"],
       "scientificName": "Silurus glanis",
       "image": "/fish/harcsa.jpg",
       "occurrenceSource": "kis-balaton-2008",
@@ -1023,9 +1017,7 @@
     {
       "id": "csaposuger",
       "nameHu": "Sügér",
-      "alsoKnownAsHu": [
-        "csapósügér"
-      ],
+      "alsoKnownAsHu": ["csapósügér"],
       "scientificName": "Perca fluviatilis",
       "image": "/fish/csaposuger.jpg",
       "occurrenceSource": "kis-balaton-2008",
@@ -1086,9 +1078,7 @@
     {
       "id": "vagodurbincs",
       "nameHu": "Vágódurbincs",
-      "alsoKnownAsHu": [
-        "vágó durbincs"
-      ],
+      "alsoKnownAsHu": ["vágó durbincs"],
       "scientificName": "Gymnocephalus cernua",
       "image": "/fish/vagodurbincs.jpg",
       "occurrenceSource": "kis-balaton-2008",
@@ -1231,10 +1221,7 @@
     {
       "id": "nyurgaponty",
       "nameHu": "Nyurgaponty",
-      "alsoKnownAsHu": [
-        "vadponty",
-        "folyami ponty"
-      ],
+      "alsoKnownAsHu": ["vadponty", "folyami ponty"],
       "scientificName": "Cyprinus carpio morpha hungaricus",
       "image": "/fish/nyurgaponty.jpg",
       "occurrenceSource": "kis-balaton-2008",
