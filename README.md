@@ -1,7 +1,11 @@
 # Zalai halak
 
-Hungarian fish-identification game and festival site, built with React, vinext,
-Vite and Cloudflare Workers. See [CHECKLIST.md](CHECKLIST.md) for maintenance status.
+A simple Hungarian-language website for **Zalai halak**, a festival taking place
+in **March 2027**. The site includes festival information and an interactive
+fish-identification game.
+
+Built with React, TypeScript, vinext, Vite and Tailwind CSS, with Cloudflare Workers
+providing the runtime. See [CHECKLIST.md](CHECKLIST.md) for maintenance status.
 
 ## Linux, Windows and macOS setup
 
@@ -13,6 +17,10 @@ Run these commands from the repository root in Bash, PowerShell or Command Promp
 pnpm install --frozen-lockfile
 pnpm dev
 ```
+
+Open the local URL printed by the development server.
+
+## Build and preview
 
 For a production build and local Workers preview:
 
@@ -42,8 +50,8 @@ pnpm images:download
 `pnpm format` applies formatting. Validation uses `tsx`, so it does not depend on
 Node's optional built-in TypeScript support. The Node image downloader retains
 existing images and downloads only missing reviewed assets. The `.ps1` file is a
-compatibility wrapper; PowerShell is not required. Linux and Windows CI run checks
-and builds on Node 22 and 24. Do not copy `node_modules` across operating systems;
+compatibility wrapper; PowerShell is not required. Linux and Windows CI run checks,
+builds and browser tests on Node 22 and 24. Do not copy `node_modules` across operating systems;
 install from the lockfile on each machine so native tools match the platform.
 
 The component library intentionally uses ARIA roles with generic elements, so
@@ -76,6 +84,14 @@ Browser binaries are installed separately on each machine, not committed.
 
 The existing public site is https://zalai-halak-2027.gyorkimilan.chatgpt.site.
 Publication uses the connected Sites service, preserving the project ID and public
-audience. Push the exact source state to the Sites repository, save that version,
+audience. After checks and the production build pass, push the exact source state
+to the Sites repository, save that version,
 then deploy and verify its status. A GitHub push alone is not a Sites deployment.
-The audit confirmed owner access; no publication has been performed for these fixes.
+
+## Project layout
+
+- `app/`: pages and application styles.
+- `components/`: shared interface components.
+- `data/`: fish data and supporting documentation.
+- `public/`: static assets, including fish images.
+- `scripts/` and `tests/`: tooling, validation and browser tests.
