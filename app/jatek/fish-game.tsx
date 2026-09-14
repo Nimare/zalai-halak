@@ -391,10 +391,6 @@ export default function FishGame() {
                   <dd>{fact.identification}</dd>
                 </div>
                 <div>
-                  <dt>Fajlista sorszáma</dt>
-                  <dd>{currentFish.number}</dd>
-                </div>
-                <div>
                   <dt>Eredet</dt>
                   <dd>
                     {
