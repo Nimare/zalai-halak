@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import fishData from '../data/fishes.json' with { type: 'json' };
+import quizResults from '../data/quiz-results.json' with { type: 'json' };
 
 test('pages, images, navigation and layout work', async ({ page, request }) => {
   const errors: string[] = [];
@@ -33,6 +34,7 @@ test('pages, images, navigation and layout work', async ({ page, request }) => {
   for (const path of [
     '/poster.png',
     '/favicon.svg',
+    ...Object.values(quizResults).map((result) => result.image),
     ...fishData.fishes.map((fish) => fish.image),
   ]) {
     expect((await request.get(path)).status(), path).toBe(200);
@@ -79,6 +81,9 @@ for (const blockedStorage of [false, true]) {
         .click();
     }
     await expect(page.locator('h1')).toHaveText('20 / 20');
+    await expect(
+      page.getByRole('heading', { name: 'Ponty', exact: true }),
+    ).toBeVisible();
     if (!blockedStorage) {
       await page.reload();
       await expect(page.getByRole('button', { name: /^Kezdő/ })).toContainText(
@@ -106,3 +111,75 @@ test('expert input and timeout advance correctly', async ({ page }) => {
   await expect(page.getByText('Lejárt az idő', { exact: true })).toBeVisible();
   await expect(page.getByRole('progressbar')).toHaveAttribute('value', '0');
 });
+
+const resultScenarios = [
+  { mode: 'Kezdő', score: 0, id: 'lapi-poc' },
+  { mode: 'Kezdő', score: 15, id: 'folyami-geb' },
+  { mode: 'Szakértő', score: 0, id: 'lapi-poc' },
+  { mode: 'Szakértő', score: 8, id: 'folyami-geb' },
+  { mode: 'Szakértő', score: 12, id: 'ponty' },
+  { mode: 'Szakértő', score: 16, id: 'suger' },
+  { mode: 'Szakértő', score: 20, id: 'csuka' },
+] as const;
+
+for (const { mode, score, id } of resultScenarios) {
+  test(`${mode}: ${score} points displays ${id} and its full description`, async ({
+    page,
+  }, testInfo) => {
+    await page.goto('/jatek');
+    await page.getByRole('button', { name: new RegExp(`^${mode}`) }).click();
+    for (let round = 0; round < 20; round++) {
+      const image = await page.locator('.fish-photo img').getAttribute('src');
+      const fish = fishData.fishes.find((entry) => entry.image === image)!;
+      if (mode === 'Kezdő') {
+        if (round < score) {
+          await page
+            .getByRole('button', { name: fish.nameHu, exact: true })
+            .click();
+        } else {
+          await page
+            .locator('.answer-option')
+            .filter({ hasNotText: fish.nameHu })
+            .first()
+            .click();
+        }
+      } else {
+        await page
+          .getByLabel('A hal pontos magyar neve')
+          .fill(round < score ? fish.nameHu : 'nem tudom');
+        await page.getByRole('button', { name: 'Válasz elküldése' }).click();
+      }
+      await page
+        .getByRole('button', {
+          name: round === 19 ? /Eredmény megtekintése/ : /Következő hal/,
+        })
+        .click();
+    }
+    const result = quizResults[id];
+    await expect(page.locator('h1')).toHaveText(`${score} / 20`);
+    await expect(
+      page.getByRole('heading', { name: result.name, exact: true }),
+    ).toBeVisible();
+    const sticker = page.getByRole('img', { name: `${result.name} matrica` });
+    await expect(sticker).toBeVisible();
+    await expect(sticker).toHaveAttribute('src', result.image);
+    await expect(sticker).toHaveJSProperty('naturalWidth', 1254);
+    await expect(page.locator('.result-description p')).toHaveText(
+      result.description,
+    );
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth <= window.innerWidth,
+      ),
+    ).toBe(true);
+    await expect(
+      page.getByRole('button', { name: /Újra ebben a módban/ }),
+    ).toBeVisible();
+    if (id === 'csuka') {
+      await page.screenshot({
+        path: testInfo.outputPath('result.png'),
+        fullPage: true,
+      });
+    }
+  });
+}

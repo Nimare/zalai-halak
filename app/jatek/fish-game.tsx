@@ -7,11 +7,11 @@ import {
   Keyboard,
   ListChecks,
   RotateCcw,
-  Trophy,
   X,
 } from 'lucide-react';
 import fishData from '@/data/fishes.json';
 import { fishFacts } from '@/data/fish-facts';
+import { getQuizResult } from '@/lib/quiz-results';
 
 import { readRecord, writeRecord } from '@/lib/record-storage';
 
@@ -212,23 +212,27 @@ export default function FishGame() {
 
   if (phase === 'result') {
     const total = rounds.length;
-    const percent = Math.round((score / total) * 100);
+    const result = getQuizResult(mode, score);
     return (
       <section className="result-panel" aria-labelledby="result-title">
-        <span className="result-icon">
-          <Trophy aria-hidden="true" />
-        </span>
         <p className="mode-kicker">A JÁTÉK VÉGET ÉRT</p>
         <h1 id="result-title">
           {score} / {total}
         </h1>
-        <p className="result-lead">
-          {percent === 100
-            ? 'Hibátlan! Ebben a körben minden halat felismertél.'
-            : percent >= 70
-              ? 'Szép fogás! Már igazán jól ismered a zalai vizeket.'
-              : 'Jó kezdet — minden körrel több jellegzetesség marad meg.'}
-        </p>
+        <img
+          className="result-sticker"
+          src={result.image}
+          alt={`${result.name} matrica`}
+          width={1254}
+          height={1254}
+        />
+        <p className="mode-kicker">A TE HALAD · {result.level}/5</p>
+        <h2 className="result-fish-name">{result.name}</h2>
+        <div className="result-description">
+          {result.description.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
         <p className="result-best">
           Saját rekordod ebben a módban:{' '}
           <strong>
