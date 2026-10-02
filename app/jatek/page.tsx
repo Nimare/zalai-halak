@@ -2,6 +2,7 @@ import { ArrowLeft, Fish } from 'lucide-react';
 import FishGame from './fish-game';
 
 export const metadata = {
+  alternates: { canonical: '/jatek' },
   title: 'Ha zalai lennél, milyen hal lennél? | Zalai halak',
   description:
     'Ismerd fel Zala vármegye halait képről kezdő vagy szakértő módban.',

@@ -3,6 +3,7 @@ import fishData from '@/data/fishes.json';
 import { fishFacts } from '@/data/fish-facts';
 
 export const metadata = {
+  alternates: { canonical: '/forrasok' },
   title: 'Források és impresszum | Zalai halak',
   description:
     'A Zalai halak játék előfordulási, fajismereti és képlicenc-forrásai.',

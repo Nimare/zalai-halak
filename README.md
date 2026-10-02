@@ -82,7 +82,9 @@ Browser binaries are installed separately on each machine, not committed.
 
 ## Publishing
 
-The existing public site is https://zalai-halak-2027.gyorkimilan.chatgpt.site.
+The public domain is https://zalaihalak.hu, also available at
+https://www.zalaihalak.hu. Page canonical URLs use the domain without `www`.
+The original Sites address remains https://zalai-halak-2027.gyorkimilan.chatgpt.site.
 Publication uses the connected Sites service, preserving the project ID and public
 audience. After checks and the production build pass, push the exact source state
 to the Sites repository, save that version,

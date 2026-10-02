@@ -10,6 +10,10 @@ import {
   FishSymbol,
   Users,
 } from 'lucide-react';
+export const metadata = {
+  alternates: { canonical: '/' },
+};
+
 const programs = [
   { icon: Fish, title: 'Kiállítók', detail: 'és újdonságok' },
   { icon: ShoppingCart, title: 'Horgászboltok', detail: 'és kedvezmények' },

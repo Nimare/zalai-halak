@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 export const metadata: Metadata = {
+  metadataBase: new URL('https://zalaihalak.hu'),
   icons: { icon: '/favicon.svg' },
   title: 'Zalai halak – Horgászfesztivál | 2027. március 5–7.',
   description:
